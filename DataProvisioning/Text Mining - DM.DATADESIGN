@@ -1,0 +1,2013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Text Mining - PostgreSQL" id="4755">
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://ussm-mag164-demo-pipeline.lab.opentext.com:5432/magellan</property>
+            <property name="odaUser">maguser</property>
+            <encrypted-property name="odaPassword" encryptionID="jce">ed692c756ac318b4caab65efdde92e0b</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ca_category" id="4756">
+            <text-property name="displayName">ca_category</text-property>
+            <property name="isVisible">true</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">kb_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">weight</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">kb_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">weight</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Text Mining - PostgreSQL</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_id</property>
+                    <property name="nativeName">doc_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">kb_name</property>
+                    <property name="nativeName">kb_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">weight</property>
+                    <property name="nativeName">weight</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select doc_id, kb_name, name, weight from public.ca_category]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ca_concept" id="4757">
+            <text-property name="displayName">ca_concept</text-property>
+            <property name="isVisible">true</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">frequency</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">relevancy</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">frequency</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">relevancy</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Text Mining - PostgreSQL</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_id</property>
+                    <property name="nativeName">doc_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">frequency</property>
+                    <property name="nativeName">frequency</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">relevancy</property>
+                    <property name="nativeName">relevancy</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select doc_id, name, frequency, relevancy from public.ca_concept]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ca_sentence_sentiments" id="4758">
+            <text-property name="displayName">ca_sentence_sentiments</text-property>
+            <property name="isVisible">true</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">tone</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">positive_tone_score</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">negative_tone_score</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjectivity</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjectivity_score</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">sentence</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">tone</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">positive_tone_score</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">negative_tone_score</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">subjectivity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">subjectivity_score</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">sentence</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Text Mining - PostgreSQL</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_id</property>
+                    <property name="nativeName">doc_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">tone</property>
+                    <property name="nativeName">tone</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">positive_tone_score</property>
+                    <property name="nativeName">positive_tone_score</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">negative_tone_score</property>
+                    <property name="nativeName">negative_tone_score</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">subjectivity</property>
+                    <property name="nativeName">subjectivity</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">subjectivity_score</property>
+                    <property name="nativeName">subjectivity_score</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">sentence</property>
+                    <property name="nativeName">sentence</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select doc_id, tone, positive_tone_score, negative_tone_score, subjectivity, subjectivity_score, sentence from public.ca_sentence_sentiments]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="document" id="4759">
+            <text-property name="displayName">document</text-property>
+            <property name="isVisible">true</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">repository_id</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">object_type</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">row["object_type"]</expression>
+                    <simple-property-list name="value1">
+                        <value>"document"</value>
+                    </simple-property-list>
+                </structure>
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">row["repository_id"]</expression>
+                    <simple-property-list name="value1">
+                        <value>params["Repository ID"].value</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">repository_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">object_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Text Mining - PostgreSQL</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_id</property>
+                    <property name="nativeName">doc_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">repository_id</property>
+                    <property name="nativeName">repository_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">object_type</property>
+                    <property name="nativeName">object_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select doc_id, repository_id, object_type from public.document]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="document_metadata_attributes" id="4760">
+            <text-property name="displayName">document_metadata_attributes</text-property>
+            <property name="isVisible">true</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">description</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">creation_date</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">last_modification_date</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_by</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">owned_by</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">file_type</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">content_stream_length</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">content_stream_file_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">path</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">subject</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">authors</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">content_stream_mime_type</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">version_major</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">version_minor</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">version_label</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">number_versions</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">direct_link</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">normalized_file_type</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">direct_link_mask</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">summary</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">creation_date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">last_modification_date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">created_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">owned_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">file_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">content_stream_length</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">content_stream_file_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">path</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">subject</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">authors</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">content_stream_mime_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">version_major</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">version_minor</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">version_label</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">number_versions</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">direct_link</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">normalized_file_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">direct_link_mask</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">summary</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Text Mining - PostgreSQL</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_id</property>
+                    <property name="nativeName">doc_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">name</property>
+                    <property name="nativeName">name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">description</property>
+                    <property name="nativeName">description</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">creation_date</property>
+                    <property name="nativeName">creation_date</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">last_modification_date</property>
+                    <property name="nativeName">last_modification_date</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">created_by</property>
+                    <property name="nativeName">created_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">owned_by</property>
+                    <property name="nativeName">owned_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">file_type</property>
+                    <property name="nativeName">file_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">content_stream_length</property>
+                    <property name="nativeName">content_stream_length</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">content_stream_file_name</property>
+                    <property name="nativeName">content_stream_file_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">path</property>
+                    <property name="nativeName">path</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">subject</property>
+                    <property name="nativeName">subject</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">authors</property>
+                    <property name="nativeName">authors</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">content_stream_mime_type</property>
+                    <property name="nativeName">content_stream_mime_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">version_major</property>
+                    <property name="nativeName">version_major</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">version_minor</property>
+                    <property name="nativeName">version_minor</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">version_label</property>
+                    <property name="nativeName">version_label</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">number_versions</property>
+                    <property name="nativeName">number_versions</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">direct_link</property>
+                    <property name="nativeName">direct_link</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">normalized_file_type</property>
+                    <property name="nativeName">normalized_file_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">direct_link_mask</property>
+                    <property name="nativeName">direct_link_mask</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">summary</property>
+                    <property name="nativeName">summary</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select doc_id, name, description, creation_date, last_modification_date, created_by, owned_by, file_type, content_stream_length, content_stream_file_name, path, subject, authors, content_stream_mime_type, version_major, version_minor, version_label, number_versions, direct_link, normalized_file_type, direct_link_mask, summary from public.document_metadata_attributes]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="tweets" id="4761">
+            <text-property name="displayName">tweets</text-property>
+            <property name="isVisible">true</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_crawler_job_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_crawler_group_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_crawler_tweet_id</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_retweet_count</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_retweeted</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_favorite_count</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_favorited</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_in_reply_to_screen_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_in_reply_to_status_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_retweeted_status_id</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_coordinates</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_favorites_count</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_friends_count</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_followers_count</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_statuses_count</property>
+                    <property name="analysis">measure</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_location</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_url</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_lang</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_created_at</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_description</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_time_zone</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_place_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_place_country</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_place_full_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_place_place_type</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_created_at</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_screen_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_user_name</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_text</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">twitter_lang</property>
+                    <property name="analysis">dimension</property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">row["twitter_crawler_group_name"]</expression>
+                    <simple-property-list name="value1">
+                        <value>params["Twitter Crawler Group Name"].value</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">twitter_crawler_job_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">twitter_crawler_group_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">twitter_crawler_tweet_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">twitter_retweet_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">twitter_retweeted</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">twitter_favorite_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">twitter_favorited</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">twitter_in_reply_to_screen_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">twitter_in_reply_to_status_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">twitter_retweeted_status_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">twitter_coordinates</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">twitter_user_favorites_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">twitter_user_friends_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">twitter_user_followers_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">twitter_user_statuses_count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">twitter_user_location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">twitter_user_url</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">twitter_user_lang</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">twitter_user_created_at</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">twitter_user_description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">twitter_user_time_zone</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">twitter_place_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">twitter_place_country</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">twitter_place_full_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">twitter_place_place_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">twitter_created_at</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">twitter_user_screen_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">twitter_user_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">twitter_text</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">twitter_lang</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Text Mining - PostgreSQL</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_id</property>
+                    <property name="nativeName">doc_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">twitter_crawler_job_id</property>
+                    <property name="nativeName">twitter_crawler_job_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">twitter_crawler_group_name</property>
+                    <property name="nativeName">twitter_crawler_group_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">twitter_crawler_tweet_id</property>
+                    <property name="nativeName">twitter_crawler_tweet_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">twitter_retweet_count</property>
+                    <property name="nativeName">twitter_retweet_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">twitter_retweeted</property>
+                    <property name="nativeName">twitter_retweeted</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">twitter_favorite_count</property>
+                    <property name="nativeName">twitter_favorite_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">twitter_favorited</property>
+                    <property name="nativeName">twitter_favorited</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">twitter_in_reply_to_screen_name</property>
+                    <property name="nativeName">twitter_in_reply_to_screen_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">twitter_in_reply_to_status_id</property>
+                    <property name="nativeName">twitter_in_reply_to_status_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">twitter_retweeted_status_id</property>
+                    <property name="nativeName">twitter_retweeted_status_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">twitter_coordinates</property>
+                    <property name="nativeName">twitter_coordinates</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">twitter_user_favorites_count</property>
+                    <property name="nativeName">twitter_user_favorites_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">twitter_user_friends_count</property>
+                    <property name="nativeName">twitter_user_friends_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">twitter_user_followers_count</property>
+                    <property name="nativeName">twitter_user_followers_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">twitter_user_statuses_count</property>
+                    <property name="nativeName">twitter_user_statuses_count</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">twitter_user_location</property>
+                    <property name="nativeName">twitter_user_location</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">twitter_user_url</property>
+                    <property name="nativeName">twitter_user_url</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">twitter_user_lang</property>
+                    <property name="nativeName">twitter_user_lang</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">twitter_user_created_at</property>
+                    <property name="nativeName">twitter_user_created_at</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">twitter_user_description</property>
+                    <property name="nativeName">twitter_user_description</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">twitter_user_time_zone</property>
+                    <property name="nativeName">twitter_user_time_zone</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">twitter_place_name</property>
+                    <property name="nativeName">twitter_place_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">twitter_place_country</property>
+                    <property name="nativeName">twitter_place_country</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">twitter_place_full_name</property>
+                    <property name="nativeName">twitter_place_full_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">twitter_place_place_type</property>
+                    <property name="nativeName">twitter_place_place_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">twitter_created_at</property>
+                    <property name="nativeName">twitter_created_at</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">twitter_user_screen_name</property>
+                    <property name="nativeName">twitter_user_screen_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">twitter_user_name</property>
+                    <property name="nativeName">twitter_user_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">twitter_text</property>
+                    <property name="nativeName">twitter_text</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">twitter_lang</property>
+                    <property name="nativeName">twitter_lang</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select doc_id, twitter_crawler_job_id, twitter_crawler_group_name, twitter_crawler_tweet_id, twitter_retweet_count, twitter_retweeted, twitter_favorite_count, twitter_favorited, twitter_in_reply_to_screen_name, twitter_in_reply_to_status_id, twitter_retweeted_status_id, twitter_coordinates, twitter_user_favorites_count, twitter_user_friends_count, twitter_user_followers_count, twitter_user_statuses_count, twitter_user_location, twitter_user_url, twitter_user_lang, twitter_user_created_at, twitter_user_description, twitter_user_time_zone, twitter_place_name, twitter_place_country, twitter_place_full_name, twitter_place_place_type, twitter_created_at, twitter_user_screen_name, twitter_user_name, twitter_text, twitter_lang from public.tweets]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <parameters>
+        <scalar-parameter name="Repository ID" id="4883">
+            <text-property name="helpText">Repository ID is determined by the crawler job</text-property>
+            <text-property name="promptText">Enter Repository ID</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">document</property>
+            <expression name="valueExpr">dataSetRow["repository_id"]</expression>
+            <expression name="labelExpr">dataSetRow["repository_id"]</expression>
+            <expression name="sortByColumn">dataSetRow["repository_id"]</expression>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">22251</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+        </scalar-parameter>
+        <scalar-parameter name="Twitter Crawler Group Name" id="4884">
+            <text-property name="helpText">Select Twitter Crawler Group Name</text-property>
+            <text-property name="promptText">Twitter Crawler Group Name</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">tweets</property>
+            <expression name="valueExpr">dataSetRow["twitter_crawler_group_name"]</expression>
+            <expression name="labelExpr">dataSetRow["twitter_crawler_group_name"]</expression>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">OpenText</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+        </scalar-parameter>
+    </parameters>
+    <property name="linkedDataModels">
+        <linked-data-model name="Document Keyword Sentiment" id="4762">
+            <property name="aliasDataSets">
+                <alias-data-set name="document" id="4816">
+                    <property name="originDataSet">document</property>
+                </alias-data-set>
+                <alias-data-set name="ca_category" id="4817">
+                    <property name="originDataSet">ca_category</property>
+                </alias-data-set>
+                <alias-data-set name="ca_concept" id="4818">
+                    <property name="originDataSet">ca_concept</property>
+                </alias-data-set>
+                <alias-data-set name="ca_sentence_sentiments" id="4819">
+                    <property name="originDataSet">ca_sentence_sentiments</property>
+                </alias-data-set>
+                <alias-data-set name="document_metadata_attributes" id="4820">
+                    <property name="originDataSet">document_metadata_attributes</property>
+                </alias-data-set>
+            </property>
+            <property name="columnLinks">
+                <column-link id="4808">
+                    <property name="leftAliasDataSet">Document Keyword Sentiment/document</property>
+                    <property name="rightAliasDataSet">Document Keyword Sentiment/ca_category</property>
+                    <property name="type">inner</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="4809">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="4810">
+                    <property name="leftAliasDataSet">Document Keyword Sentiment/document</property>
+                    <property name="rightAliasDataSet">Document Keyword Sentiment/ca_concept</property>
+                    <property name="type">inner</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="4811">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="4812">
+                    <property name="leftAliasDataSet">Document Keyword Sentiment/document</property>
+                    <property name="rightAliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                    <property name="type">inner</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="4813">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="4814">
+                    <property name="leftAliasDataSet">Document Keyword Sentiment/document</property>
+                    <property name="rightAliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                    <property name="type">inner</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="4815">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+            </property>
+            <property name="categories">
+                <category name="document" id="4763">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id" id="4764">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="repository_id" id="4765">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document</property>
+                            <property name="resultSetColumnName">repository_id</property>
+                        </category-column>
+                        <category-column name="object_type" id="4766">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document</property>
+                            <property name="resultSetColumnName">object_type</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="ca_category" id="4767">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id1" id="4768">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="kb_name" id="4769">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">kb_name</property>
+                        </category-column>
+                        <category-column name="name" id="4770">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">name</property>
+                        </category-column>
+                        <category-column name="weight" id="4771">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">weight</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="ca_concept" id="4772">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id2" id="4773">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="name1" id="4774">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">name</property>
+                        </category-column>
+                        <category-column name="frequency" id="4775">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">frequency</property>
+                        </category-column>
+                        <category-column name="relevancy" id="4776">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">relevancy</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="ca_sentence_sentiments" id="4777">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id3" id="4778">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="tone" id="4779">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">tone</property>
+                        </category-column>
+                        <category-column name="positive_tone_score" id="4780">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">positive_tone_score</property>
+                        </category-column>
+                        <category-column name="negative_tone_score" id="4781">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">negative_tone_score</property>
+                        </category-column>
+                        <category-column name="subjectivity" id="4782">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">subjectivity</property>
+                        </category-column>
+                        <category-column name="subjectivity_score" id="4783">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">subjectivity_score</property>
+                        </category-column>
+                        <category-column name="sentence" id="4784">
+                            <property name="aliasDataSet">Document Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">sentence</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="document_metadata_attributes" id="4785">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id4" id="4786">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="name2" id="4787">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">name</property>
+                        </category-column>
+                        <category-column name="description" id="4788">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">description</property>
+                        </category-column>
+                        <category-column name="creation_date" id="4789">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">creation_date</property>
+                        </category-column>
+                        <category-column name="last_modification_date" id="4790">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">last_modification_date</property>
+                        </category-column>
+                        <category-column name="created_by" id="4791">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">created_by</property>
+                        </category-column>
+                        <category-column name="owned_by" id="4792">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">owned_by</property>
+                        </category-column>
+                        <category-column name="file_type" id="4793">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">file_type</property>
+                        </category-column>
+                        <category-column name="content_stream_length" id="4794">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">content_stream_length</property>
+                        </category-column>
+                        <category-column name="content_stream_file_name" id="4795">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">content_stream_file_name</property>
+                        </category-column>
+                        <category-column name="path" id="4796">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">path</property>
+                        </category-column>
+                        <category-column name="subject" id="4797">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">subject</property>
+                        </category-column>
+                        <category-column name="authors" id="4798">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">authors</property>
+                        </category-column>
+                        <category-column name="content_stream_mime_type" id="4799">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">content_stream_mime_type</property>
+                        </category-column>
+                        <category-column name="version_major" id="4800">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">version_major</property>
+                        </category-column>
+                        <category-column name="version_minor" id="4801">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">version_minor</property>
+                        </category-column>
+                        <category-column name="version_label" id="4802">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">version_label</property>
+                        </category-column>
+                        <category-column name="number_versions" id="4803">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">number_versions</property>
+                        </category-column>
+                        <category-column name="direct_link" id="4804">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">direct_link</property>
+                        </category-column>
+                        <category-column name="normalized_file_type" id="4805">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">normalized_file_type</property>
+                        </category-column>
+                        <category-column name="direct_link_mask" id="4806">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">direct_link_mask</property>
+                        </category-column>
+                        <category-column name="summary" id="4807">
+                            <property name="aliasDataSet">Document Keyword Sentiment/document_metadata_attributes</property>
+                            <property name="resultSetColumnName">summary</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+        </linked-data-model>
+        <linked-data-model name="Twitter Keyword Sentiment" id="4821">
+            <property name="aliasDataSets">
+                <alias-data-set name="tweets" id="4879">
+                    <property name="originDataSet">tweets</property>
+                </alias-data-set>
+                <alias-data-set name="ca_category" id="4880">
+                    <property name="originDataSet">ca_category</property>
+                </alias-data-set>
+                <alias-data-set name="ca_concept" id="4881">
+                    <property name="originDataSet">ca_concept</property>
+                </alias-data-set>
+                <alias-data-set name="ca_sentence_sentiments" id="4882">
+                    <property name="originDataSet">ca_sentence_sentiments</property>
+                </alias-data-set>
+            </property>
+            <property name="columnLinks">
+                <column-link id="4873">
+                    <property name="leftAliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                    <property name="rightAliasDataSet">Twitter Keyword Sentiment/ca_category</property>
+                    <property name="type">inner</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="4874">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="4875">
+                    <property name="leftAliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                    <property name="rightAliasDataSet">Twitter Keyword Sentiment/ca_concept</property>
+                    <property name="type">inner</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="4876">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="4877">
+                    <property name="leftAliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                    <property name="rightAliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                    <property name="type">inner</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="4878">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">doc_id</property>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+            </property>
+            <property name="drillPaths">
+                <drill-path id="4872">
+                    <text-property name="displayName">twitter_created_at</text-property>
+                    <simple-property-list name="drillPathColumns">
+                        <value>dataSetRow["twitter_created_at"]["Year"]</value>
+                        <value>dataSetRow["twitter_created_at"]["Month"]</value>
+                        <value>dataSetRow["twitter_created_at"]["WeekOfMonth"]</value>
+                        <value>dataSetRow["twitter_created_at"]["DayOfWeek"]</value>
+                    </simple-property-list>
+                </drill-path>
+            </property>
+            <property name="categories">
+                <category name="tweets" id="4822">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id" id="4823">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="twitter_crawler_job_id" id="4824">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_crawler_job_id</property>
+                        </category-column>
+                        <category-column name="twitter_crawler_group_name" id="4825">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_crawler_group_name</property>
+                        </category-column>
+                        <category-column name="twitter_crawler_tweet_id" id="4826">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_crawler_tweet_id</property>
+                        </category-column>
+                        <category-column name="twitter_retweet_count" id="4827">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_retweet_count</property>
+                        </category-column>
+                        <category-column name="twitter_retweeted" id="4828">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_retweeted</property>
+                        </category-column>
+                        <category-column name="twitter_favorite_count" id="4829">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_favorite_count</property>
+                        </category-column>
+                        <category-column name="twitter_favorited" id="4830">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_favorited</property>
+                        </category-column>
+                        <category-column name="twitter_in_reply_to_screen_name" id="4831">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_in_reply_to_screen_name</property>
+                        </category-column>
+                        <category-column name="twitter_in_reply_to_status_id" id="4832">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_in_reply_to_status_id</property>
+                        </category-column>
+                        <category-column name="twitter_retweeted_status_id" id="4833">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_retweeted_status_id</property>
+                        </category-column>
+                        <category-column name="twitter_coordinates" id="4834">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_coordinates</property>
+                        </category-column>
+                        <category-column name="twitter_user_favorites_count" id="4835">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_favorites_count</property>
+                        </category-column>
+                        <category-column name="twitter_user_friends_count" id="4836">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_friends_count</property>
+                        </category-column>
+                        <category-column name="twitter_user_followers_count" id="4837">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_followers_count</property>
+                        </category-column>
+                        <category-column name="twitter_user_statuses_count" id="4838">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_statuses_count</property>
+                        </category-column>
+                        <category-column name="twitter_user_location" id="4839">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_location</property>
+                        </category-column>
+                        <category-column name="twitter_user_url" id="4840">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_url</property>
+                        </category-column>
+                        <category-column name="twitter_user_lang" id="4841">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_lang</property>
+                        </category-column>
+                        <category-column name="twitter_user_created_at" id="4842">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_created_at</property>
+                        </category-column>
+                        <category-column name="twitter_user_description" id="4843">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_description</property>
+                        </category-column>
+                        <category-column name="twitter_user_time_zone" id="4844">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_time_zone</property>
+                        </category-column>
+                        <category-column name="twitter_place_name" id="4845">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_place_name</property>
+                        </category-column>
+                        <category-column name="twitter_place_country" id="4846">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_place_country</property>
+                        </category-column>
+                        <category-column name="twitter_place_full_name" id="4847">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_place_full_name</property>
+                        </category-column>
+                        <category-column name="twitter_place_place_type" id="4848">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_place_place_type</property>
+                        </category-column>
+                        <category-column name="twitter_created_at" id="4849">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_created_at</property>
+                        </category-column>
+                        <category-column name="twitter_user_screen_name" id="4850">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_screen_name</property>
+                        </category-column>
+                        <category-column name="twitter_user_name" id="4851">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_user_name</property>
+                        </category-column>
+                        <category-column name="twitter_text" id="4852">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_text</property>
+                        </category-column>
+                        <category-column name="twitter_lang" id="4853">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/tweets</property>
+                            <property name="resultSetColumnName">twitter_lang</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="ca_category" id="4854">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id1" id="4855">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="kb_name" id="4856">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">kb_name</property>
+                        </category-column>
+                        <category-column name="name" id="4857">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">name</property>
+                        </category-column>
+                        <category-column name="weight" id="4858">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_category</property>
+                            <property name="resultSetColumnName">weight</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="ca_concept" id="4859">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id2" id="4860">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="name1" id="4861">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">name</property>
+                        </category-column>
+                        <category-column name="frequency" id="4862">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">frequency</property>
+                        </category-column>
+                        <category-column name="relevancy" id="4863">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_concept</property>
+                            <property name="resultSetColumnName">relevancy</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="ca_sentence_sentiments" id="4864">
+                    <property name="categoryColumns">
+                        <category-column name="doc_id3" id="4865">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">doc_id</property>
+                        </category-column>
+                        <category-column name="tone" id="4866">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">tone</property>
+                        </category-column>
+                        <category-column name="positive_tone_score" id="4867">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">positive_tone_score</property>
+                        </category-column>
+                        <category-column name="negative_tone_score" id="4868">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">negative_tone_score</property>
+                        </category-column>
+                        <category-column name="subjectivity" id="4869">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">subjectivity</property>
+                        </category-column>
+                        <category-column name="subjectivity_score" id="4870">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">subjectivity_score</property>
+                        </category-column>
+                        <category-column name="sentence" id="4871">
+                            <property name="aliasDataSet">Twitter Keyword Sentiment/ca_sentence_sentiments</property>
+                            <property name="resultSetColumnName">sentence</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+        </linked-data-model>
+    </property>
+</datamart>
